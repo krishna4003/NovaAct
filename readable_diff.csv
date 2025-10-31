@@ -1,0 +1,120 @@
+Section,URL1 Text,URL2 Text,Difference
+,Skip to content,, Removed
+,Boto3 1.40.63 documentation,, Removed
+,,Boto3 1.34.86 documentation, Added
+,Toggle navigation of Code Examples,Toggle child pages in navigation, Modified
+,Toggle navigation of Developer Guide,, Removed
+,Toggle navigation of Available Services,, Removed
+,AIOps,AlexaForBusiness, Modified
+,CloudWatchApplicationSignals,, Removed
+,ARCRegionswitch,, Removed
+,BackupSearch,BackupStorage, Modified
+,BillingandCostManagementDashboards,, Removed
+,BillingandCostManagementPricingCalculator,, Removed
+,BillingandCostManagementRecommendedActions,, Removed
+,BedrockAgentCore,, Removed
+,BedrockAgentCoreControl,, Removed
+,DataAutomationforBedrock,, Removed
+,RuntimeforBedrockDataAutomation,, Removed
+,Billing,, Removed
+,,CodeStar, Added
+,ConnectCampaignServiceV2,, Removed
+,DirectoryServiceData,, Removed
+,AuroraDSQL,, Removed
+,,ElasticInference, Added
+,EVS,, Removed
+,GameLiftStreams,, Removed
+,LocationServiceMapsV2,, Removed
+,LocationServicePlacesV2,, Removed
+,LocationServiceRoutesV2,, Removed
+,,Honeycode, Added
+,Invoicing,, Removed
+,ManagedintegrationsforIoTDeviceManagement,IoT1ClickDevicesService, Modified
+,,IoT1ClickProjects, Added
+,,IoTFleetHub, Added
+,KeyspacesStreams,, Removed
+,,LookoutMetrics, Added
+,,LookoutforVision, Added
+,MailManager,, Removed
+,MarketplaceReportingService,, Removed
+,MultipartyApproval,Mobile, Modified
+,NetworkFlowMonitor,, Removed
+,,NimbleStudio, Added
+,UserNotifications,, Removed
+,UserNotificationsContacts,, Removed
+,CloudWatchObservabilityAdminService,, Removed
+,odb,, Removed
+,,OpsWorks, Added
+,,OpsWorksCM, Added
+,PartnerCentralSellingAPI,, Removed
+,PrivateCAConnectorforSCEP,, Removed
+,ParallelComputingService,, Removed
+,,Private5G, Added
+,QApps,, Removed
+,,QLDB, Added
+,,QLDBSession, Added
+,,RoboMaker, Added
+,Route53Profiles,, Removed
+,RTBFabric,, Removed
+,S3Tables,, Removed
+,S3Vectors,, Removed
+,SecurityIncidentResponse,, Removed
+,,SMS, Added
+,EndUserMessagingSocial,, Removed
+,SSMGUIConnect,, Removed
+,SystemsManagerQuickSetup,, Removed
+,TaxSettings,, Removed
+,,WorkLink, Added
+,WorkspacesInstances,, Removed
+,Toggle navigation of Core References,, Removed
+,Toggle navigation of Customization References,, Removed
+,"Invokes the specified Amazon Bedrock model to run inference using the prompt and inference parameters provided in the request body. You use model inference to generate text, images, and embeddings.",, Removed
+,,"Invokes the specified Bedrock model to run inference using the input provided in the request body. You use InvokeModel to run inference for text models, image models, and embedding models.", Added
+,,"For more information, see Run inference in the Bedrock User Guide.", Added
+,,"For example requests, see Examples (after the Errors section).", Added
+,"For example code, see Invoke model code examples in the Amazon Bedrock User Guide.",, Removed
+,This operation requires permission for the bedrock:InvokeModel action.,, Removed
+,Warning,, Removed
+,"To deny all inference access to resources that you specify in the modelId field, you need to deny access to the bedrock:InvokeModel and bedrock:InvokeModelWithResponseStream actions. Doing this also denies access to the resource through the Converse API actions ( Converse and ConverseStream). For more information see Deny access for inference on specific models.",, Removed
+,"For troubleshooting some of the common errors you might encounter when using the InvokeModel API, see Troubleshooting Amazon Bedrock API Error Codes in the Amazon Bedrock User Guide",, Removed
+,"modelId='string',",, Removed
+,,modelId='string', Added
+,"trace='ENABLED'|'DISABLED'|'ENABLED_FULL',",, Removed
+,"guardrailIdentifier='string',",, Removed
+,"guardrailVersion='string',",, Removed
+,performanceConfigLatency='standard'|'optimized',, Removed
+,"body (bytes or seekable file-like object) – The prompt and inference parameters in the format specified in the contentType in the header. You must provide the body in JSON format. To see the format and content of the request and response bodies for different models, refer to Inference parameters. For more information, see Run inference in the Bedrock User Guide.",body (bytes or seekable file-like object) –, Modified
+,,[REQUIRED], Added
+,,"Input data in the format specified in the content-type request header. To see the format and content of this field for different models, refer to Inference parameters.", Added
+,contentType (string) – The MIME type of the input data in the request. You must specify application/json.,, Removed
+,,contentType (string) – The MIME type of the input data in the request. The default value is application/json., Added
+,,Identifier of the model., Added
+,[REQUIRED],, Removed
+,The unique identifier of the model to invoke to run inference.,, Removed
+,The modelId to provide depends on the type of model or throughput that you use:,, Removed
+,"If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see Amazon Bedrock base model IDs (on-demand throughput) in the Amazon Bedrock User Guide.",, Removed
+,"If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see Supported Regions and models for cross-region inference in the Amazon Bedrock User Guide.",, Removed
+,"If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see Run inference using a Provisioned Throughput in the Amazon Bedrock User Guide.",, Removed
+,"If you use a custom model, specify the ARN of the custom model deployment (for on-demand inference) or the ARN of your provisioned model (for Provisioned Throughput). For more information, see Use a custom model in Amazon Bedrock in the Amazon Bedrock User Guide.",, Removed
+,"If you use an imported model, specify the ARN of the imported model. You can get the model ARN from a successful call to CreateModelImportJob or from the Imported models page in the Amazon Bedrock console.",, Removed
+,"trace (string) – Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.",, Removed
+,guardrailIdentifier (string) –,, Removed
+,"The unique identifier of the guardrail that you want to use. If you don’t provide a value, no guardrail is applied to the invocation.",, Removed
+,An error will be thrown in the following situations.,, Removed
+,You don’t provide a guardrail identifier but you specify the amazon-bedrock-guardrailConfig field in the request body.,, Removed
+,You enable the guardrail but the contentType isn’t application/json.,, Removed
+,"You provide a guardrail identifier, but guardrailVersion isn’t specified.",, Removed
+,guardrailVersion (string) – The version number for the guardrail. The value can also be DRAFT.,, Removed
+,performanceConfigLatency (string) – Model performance settings for the request.,, Removed
+,"'contentType': 'string',",, Removed
+,,'contentType': 'string', Added
+,'performanceConfigLatency': 'standard'|'optimized',, Removed
+,"Inference response from the model in the format specified in the contentType header. To see the format and content of the request and response bodies for different models, refer to Inference parameters.",, Removed
+,,"Inference response from the model in the format specified in the content-type header field. To see the format and content of this field for different models, refer to Inference parameters.", Added
+,performanceConfigLatency (string) –,, Removed
+,Model performance settings for the request.,, Removed
+,BedrockRuntime.Client.exceptions.ServiceUnavailableException,, Removed
+,,BedrockRuntime.Client.exceptions.ModelNotReadyException, Added
+,BedrockRuntime.Client.exceptions.ModelNotReadyException,, Removed
+,"Copyright © 2025, Amazon Web Services, Inc",, Removed
+,,"Copyright © 2024, Amazon Web Services, Inc", Added
